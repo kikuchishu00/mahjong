@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<h2>削除確認</h2>
+<p>このデータを本当に削除してもよろしいですか？</p>
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" value="削除" class="btn btn-danger" />
+</form>
+
+{% endblock %}

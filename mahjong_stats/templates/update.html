@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block main %}
+<a href="{% url 'show' %}">戻る</a>
+<br></br>
+{% include "_form.html" with submit_label="修正" %}
+{% endblock %}

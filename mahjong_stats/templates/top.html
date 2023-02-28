@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block main %}
+<p><a href="{% url 'index' %}">トップページへ</a></p>
+<p><a href="{% url 'show' %}">データを追加</a></p>
+<br></br>
+<h3>成績</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>打荘数</th>
+      <th>トータルポイント</th>
+      <th>平均順位</th>
+      <th>素点</th>
+      <th>順位点</th>
+      <th>一着回数</th>
+      <th>二着回数</th>
+      <th>三着回数</th>
+      <th>四着回数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{GameNumber}}</td>
+      <td>{{TotalPoints}}</td>
+      <td>{{AvarageRank}}</td>
+      <td>{{BasePoints}}</td>
+      <td>{{RankPoints}}</td>
+      <td>{{SumFirst}}</td>
+      <td>{{SumSecond}}</td>
+      <td>{{SumThird}}</td>
+      <td>{{SumFourth}}</td>
+    </tr>
+  </tbody>
+</table>
+<br></br>
+<p>トータルポイント推移グラフ</p>
+<img src="data:image/png;base64,{{ chart|safe  }}">
+
+{% endblock %}

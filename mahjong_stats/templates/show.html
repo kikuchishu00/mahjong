@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block main %}
+<p><a href="{% url 'top' %}">戻る</a></p>
+<p><a href="{% url 'add' %}">データを登録する</a></p>
+<br></br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>日付</th>
+      <th>打荘数</th>
+      <th>ポイント</th>
+      <th>一着回数</th>
+      <th>二着回数</th>
+      <th>三着回数</th>
+      <th>四着回数</th>
+      <th></th>
+      <th></th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {% for stats in stats_list %}
+    <tr>
+      <td>{{stats.date}}</td>
+      <td>{{stats.counts}}</td>
+      <td>{{stats.points}}</td>
+      <td>{{stats.first}}</td>
+      <td>{{stats.second}}</td>
+      <td>{{stats.third}}</td>
+      <td>{{stats.fourth}}</td>
+      <td><a href="{% url 'update' stats.pk %}">修正</a></td>
+      <td><a href="{% url 'delete' stats.pk %}">削除</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
