@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ja'
 
-TIME_ZONE = 'utc+9.00'
+TIME_ZONE = 'utc'
 
 USE_I18N = True
 
