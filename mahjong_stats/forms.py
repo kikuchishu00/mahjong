@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django import forms
 from .models import Stats
 from django.core.exceptions import ValidationError
-import bootstrap_datepicker_plus.widgets as datetimepicker
+from bootstrap_datepicker_plus.widgets import DatePickerInput
 
 User = get_user_model()
 class SignUpForm(UserCreationForm):
@@ -16,7 +16,7 @@ class DataAddForm(forms.ModelForm):
         model=Stats
         fields="__all__"
         widgets = {
-            'date': datetimepicker.DatePickerInput(
+            'date': DatePickerInput(
                 format='%Y-%m-%d',
                 options={
                     'locale': 'ja',
