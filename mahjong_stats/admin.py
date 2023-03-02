@@ -9,4 +9,8 @@ from . import models
 class statsAdmin(admin.ModelAdmin):
     pass
 
+@admin.register(models.User)
+class userAdmin(admin.ModelAdmin):
+    pass
+
 
