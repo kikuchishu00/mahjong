@@ -23,7 +23,7 @@ from mahjong_stats import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('mahjong_admin/', admin.site.urls),
     path('', login_required(views.IndexView.as_view()), name="index"),
     path('', include("django.contrib.auth.urls")),
     path('signup/',views.SignupView.as_view(),name="signup"),
