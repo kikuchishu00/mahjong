@@ -21,7 +21,7 @@
   <tbody>
     {% for stats in stats_list %}
     <tr>
-      <td>{{stats.date}}</td>
+      <td>{{stats.date|date:"Y年m月d日"}}</td>
       <td>{{stats.counts}}</td>
       <td>{{stats.points}}</td>
       <td>{{stats.first}}</td>
