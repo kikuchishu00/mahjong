@@ -20,7 +20,7 @@ class DataAddForm(forms.ModelForm):
                 format='%Y-%m-%d',
                 options={
                     'locale': 'ja',
-                    'dayViewHeaderFormat': 'YY年 MM月 DD日',
+                    'dayViewHeaderFormat': 'YYYY年 MM月 DD日',
                 }
             ),
             'user':forms.HiddenInput()
