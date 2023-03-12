@@ -9,6 +9,9 @@ from .forms import DataAddForm
 from django.urls import reverse_lazy
 from . import models
 from . import graph
+from rest_framework import viewsets
+from django.http import HttpResponse
+from .serializer import StatsSerializer
 # Create your views here.
 
 
@@ -98,3 +101,9 @@ class SignupView(CreateView):
     template_name="registration/signup.html"
     form_class= SignUpForm
     success_url=reverse_lazy('login')
+
+class StatsViewSet(viewsets.ModelViewSet):
+    serializer_class = StatsSerializer
+    def get_queryset(self):
+        queryset = models.Stats.objects.filter(user=self.request.user.id).order_by('date')
+        return queryset

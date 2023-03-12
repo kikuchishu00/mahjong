@@ -34,6 +34,8 @@
 </table>
 <br></br>
 <p>トータルポイント推移グラフ</p>
-<img src="data:image/png;base64,{{ chart|safe  }}">
+{% load static %}
+<div id="root"></div>
+<script src="{% static 'mahjong_stats/main.js' %}"></script>
 
 {% endblock %}

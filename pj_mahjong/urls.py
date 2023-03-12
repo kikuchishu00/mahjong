@@ -19,12 +19,15 @@ from django.contrib.auth.decorators import login_required
 
 from django.views.generic import TemplateView
 from mahjong_stats import views
+from rest_framework import routers
 
-
+router = routers.DefaultRouter()
+router.register('stats', views.StatsViewSet,'stats')
 
 urlpatterns = [
     path('mahjong_admin/', admin.site.urls),
     path('', login_required(views.IndexView.as_view()), name="index"),
+    path('', include(router.urls)),
     path('', include("django.contrib.auth.urls")),
     path('signup/',views.SignupView.as_view(),name="signup"),
     path('add/',views.DataAddView.as_view(),name='add'),

@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block main %}
+{% load static%}
 <p>{{ user }}さん、こんにちは！</p>
 <p><a href="{% url 'top' %}">データを見る</a></p>
 <p><a href="{% url 'logout' %}">ログアウト</a></p>
+
 {% endblock %}
