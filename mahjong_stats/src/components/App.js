@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 import {  Line } from 'react-chartjs-2';
 import { Chart, registerables } from "chart.js"
 Chart.register(...registerables)
@@ -7,7 +8,7 @@ Chart.register(...registerables)
 export default function Graph(){
   const [stats, setStats] = useState([]);
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/stats')
+    axios.get('/stats')
     .then(res => {
         setStats(res.data)
     })
