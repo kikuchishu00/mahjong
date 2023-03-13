@@ -17,7 +17,7 @@ class DataAddForm(forms.ModelForm):
         fields="__all__"
         widgets = {
             'date': DatePickerInput(
-                format='%Y-%m-%d',
+                # format='%Y-%m-%d',
                 options={
                     'locale': 'ja',
                     'dayViewHeaderFormat': 'YYYY年 MM月 DD日',
