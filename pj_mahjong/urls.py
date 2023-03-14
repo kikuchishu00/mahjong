@@ -36,3 +36,6 @@ urlpatterns = [
     path('update/<pk>',views.DataUpdateView.as_view(),name='update'),
     path('delete/<pk>', views.DataDeleteView.as_view(), name="delete"),
 ]
+from django.conf.urls import url, static
+import settings
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
